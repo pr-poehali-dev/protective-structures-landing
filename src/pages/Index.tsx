@@ -2,8 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMG = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/b2177ab0-c104-43a3-a3c7-b4b53c6b518f.jpg";
-const IMG_SUBSTATION = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/79fbbe37-73f7-4549-b71f-9b812fca95b1.jpg";
-const IMG_COMPRESSOR = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/d1944f2f-8bde-4321-be12-51b0453890c7.jpg";
+const IMG_SUBSTATION = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/0629a185-5a4e-4c76-a8a2-e2c6ffa5558d.jpg";
+const IMG_COMPRESSOR = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/6023c6d6-4dcf-49a7-a9cb-a00284998ffc.jpg";
+const IMG_WORKERS = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/42dfb1e8-55b4-4728-a857-1c67a32f97d7.jpg";
+const IMG_DATACENTER = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/63df0ef4-65c9-46cb-aaa0-f856d5c0615c.jpg";
+const IMG_BLUEPRINT = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/8b95fdf0-e23d-4bc3-8c61-b6c6552afa58.jpg";
+const IMG_BARRIER = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/79fbbe37-73f7-4549-b71f-9b812fca95b1.jpg";
+const IMG_OIL = "https://cdn.poehali.dev/projects/9a945276-e39d-4651-acda-5ac3d7f84b3a/files/d1944f2f-8bde-4321-be12-51b0453890c7.jpg";
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
 function Header() {
@@ -184,6 +189,132 @@ function Hero() {
   );
 }
 
+// ─── About ────────────────────────────────────────────────────────────────────
+function About() {
+  const advantages = [
+    { icon: "Award", title: "Собственное производство", desc: "Изготавливаем конструкции на собственном производстве — контролируем качество на каждом этапе." },
+    { icon: "Users", title: "Опытная команда", desc: "Инженеры с опытом в промышленном строительстве. Работаем с объектами любой сложности." },
+    { icon: "FileCheck", title: "Полный пакет документов", desc: "Предоставляем всю необходимую исполнительную и техническую документацию по завершении работ." },
+    { icon: "Clock", title: "Соблюдение сроков", desc: "Работаем по чёткому графику. Срыв сроков недопустим — особенно на объектах непрерывного производства." },
+    { icon: "ShieldCheck", title: "Соответствие нормативам", desc: "Проектируем и монтируем в соответствии с действующими ГОСТ, СП и требованиями промышленной безопасности." },
+    { icon: "Handshake", title: "Работа с тендерами", desc: "Участвуем в закупочных процедурах по 44-ФЗ и 223-ФЗ. Готовим полный комплект тендерной документации." },
+  ];
+
+  return (
+    <section className="py-20 lg:py-28 bg-brand-dark-2 relative overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Text */}
+          <div>
+            <div className="inline-flex items-center gap-2 text-brand-blue-light text-xs font-montserrat font-600 tracking-widest uppercase mb-4">
+              <span className="w-8 h-px bg-brand-blue-light" />
+              О компании
+              <span className="w-8 h-px bg-brand-blue-light" />
+            </div>
+            <h2 className="font-oswald font-700 text-3xl lg:text-4xl text-white mb-6">
+              Надёжная защита<br />
+              <span className="text-brand-blue-light">промышленных объектов</span>
+            </h2>
+            <p className="font-montserrat text-sm text-brand-gray leading-relaxed mb-4">
+              Компания АирФортресс специализируется на проектировании, производстве и монтаже защитно-оградительных конструкций для промышленных предприятий. Работаем с объектами энергетики, нефтегазового комплекса, связи и гражданской инфраструктуры.
+            </p>
+            <p className="font-montserrat text-sm text-brand-gray leading-relaxed mb-8">
+              Решения разрабатываются индивидуально под каждый объект — с учётом технологических требований, условий эксплуатации и действующих нормативов промышленной безопасности. Полный цикл работ от обследования до сдачи объекта под ключ.
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { value: "10+", label: "лет на рынке" },
+                { value: "500+", label: "реализованных объектов" },
+                { value: "85", label: "регионов России" },
+                { value: "24/7", label: "техническая поддержка" },
+              ].map((s) => (
+                <div key={s.label} className="bg-brand-dark border border-brand-dark-3 rounded-lg p-4">
+                  <div className="font-oswald font-700 text-2xl text-brand-blue-light">{s.value}</div>
+                  <div className="font-montserrat text-xs text-brand-gray mt-1">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Images grid */}
+          <div className="grid grid-cols-2 gap-3">
+            <img src={HERO_IMG} alt="Защитная конструкция" className="rounded-xl object-cover h-48 w-full" />
+            <img src={IMG_SUBSTATION} alt="Трансформаторная подстанция" className="rounded-xl object-cover h-48 w-full" />
+            <img src={IMG_WORKERS} alt="Монтаж конструкций" className="rounded-xl object-cover h-48 w-full col-span-2" />
+          </div>
+        </div>
+
+        {/* Advantages grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {advantages.map((adv) => (
+            <div key={adv.title} className="card-hover flex gap-4 bg-brand-dark border border-brand-dark-3 rounded-xl p-5 group">
+              <div className="w-10 h-10 rounded-lg bg-brand-blue/15 border border-brand-blue/25 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-blue/25 transition-colors">
+                <Icon name={adv.icon} fallback="Circle" size={18} className="text-brand-blue-light" />
+              </div>
+              <div>
+                <div className="font-oswald font-600 text-base text-white mb-1">{adv.title}</div>
+                <p className="font-montserrat text-xs text-brand-gray leading-relaxed">{adv.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Gallery ──────────────────────────────────────────────────────────────────
+function Gallery() {
+  const photos = [
+    { img: IMG_SUBSTATION, title: "Трансформаторная подстанция", location: "Тюменская область" },
+    { img: IMG_COMPRESSOR, title: "Компрессорная станция", location: "Ямало-Ненецкий АО" },
+    { img: IMG_WORKERS, title: "Монтаж металлокаркаса", location: "Московская область" },
+    { img: IMG_DATACENTER, title: "Центр обработки данных", location: "Санкт-Петербург" },
+    { img: IMG_BARRIER, title: "Периметральное ограждение", location: "Свердловская область" },
+    { img: IMG_BLUEPRINT, title: "Проектирование конструкций", location: "Краснодарский край" },
+  ];
+
+  return (
+    <section className="py-20 lg:py-28 bg-brand-dark relative">
+      <div className="grid-bg absolute inset-0 opacity-20" />
+      <div className="relative container mx-auto px-4 lg:px-8">
+        <SectionHeader
+          label="Выполненные проекты"
+          title="Галерея объектов"
+          subtitle="Реализованные защитные конструкции на объектах по всей России"
+        />
+        <div className="mt-12 grid grid-cols-2 lg:grid-cols-3 gap-4">
+          {photos.map((p, i) => (
+            <div key={i} className={`relative overflow-hidden rounded-xl group cursor-pointer ${i === 2 ? "col-span-2 lg:col-span-1" : ""}`}>
+              <img
+                src={p.img}
+                alt={p.title}
+                className="w-full object-cover h-52 transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div className="font-oswald font-600 text-white text-base">{p.title}</div>
+                <div className="flex items-center gap-1 mt-1">
+                  <Icon name="MapPin" size={12} className="text-brand-blue-light" />
+                  <span className="font-montserrat text-xs text-brand-gray-light">{p.location}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <a
+            href="#contacts"
+            className="inline-flex items-center gap-2 bg-transparent border border-brand-blue/50 hover:border-brand-blue-light hover:bg-brand-blue/10 text-brand-blue-light font-montserrat font-600 text-sm px-8 py-3 rounded-lg transition-all"
+          >
+            <Icon name="FolderOpen" size={16} />
+            Обсудить ваш проект
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Services ─────────────────────────────────────────────────────────────────
 function Services() {
   const items = [
@@ -279,7 +410,7 @@ function Objects() {
     {
       icon: "Warehouse",
       title: "Склады и производство",
-      img: HERO_IMG,
+      img: IMG_WORKERS,
       items: [
         "Логистические комплексы",
         "Складские объекты",
@@ -292,7 +423,7 @@ function Objects() {
     {
       icon: "Server",
       title: "Объекты связи и данных",
-      img: IMG_SUBSTATION,
+      img: IMG_DATACENTER,
       items: [
         "Центры обработки данных (ЦОД)",
         "Узлы связи и телекоммуникационное оборудование",
@@ -303,7 +434,7 @@ function Objects() {
     {
       icon: "HeartPulse",
       title: "Инфраструктура жизнеобеспечения",
-      img: IMG_COMPRESSOR,
+      img: IMG_BARRIER,
       items: [
         "Котельные и тепловые пункты",
         "Водозаборные узлы и станции водоподготовки",
@@ -315,7 +446,7 @@ function Objects() {
     {
       icon: "Building2",
       title: "Гражданская инфраструктура",
-      img: HERO_IMG,
+      img: IMG_OIL,
       items: [
         "Административные здания",
         "Общественные пространства",
@@ -416,38 +547,44 @@ function Solutions() {
   const solutions = [
     {
       icon: "Grid3x3",
+      img: IMG_BARRIER,
       title: "Сетчатые защитные системы",
-      desc: "Металлические сетчатые ограждения с высокой прочностью и долговечностью. Применяются для периметральной защиты открытых площадок.",
+      desc: "Металлические сетчатые ограждения с высокой прочностью и долговечностью. Применяются для периметральной защиты открытых площадок, трансформаторных подстанций и технологических зон.",
       tags: ["Периметр", "Ограждение", "Сетка"],
     },
     {
       icon: "Box",
+      img: IMG_SUBSTATION,
       title: "Металлокаркасные конструкции",
-      desc: "Жёсткие несущие конструкции из стального проката. Используются для создания защитных корпусов вокруг оборудования.",
+      desc: "Жёсткие несущие конструкции из стального проката. Используются для создания защитных корпусов вокруг трансформаторов, автотрансформаторов и высоковольтного оборудования.",
       tags: ["Каркас", "Сталь", "Корпус"],
     },
     {
       icon: "Layers",
+      img: IMG_WORKERS,
       title: "Конструкции на базе строительных лесов",
-      desc: "Модульные системы из строительных лесов для временной и постоянной защиты. Быстрый монтаж и демонтаж.",
+      desc: "Модульные системы из сертифицированных строительных лесов для временной и постоянной защиты. Быстрый монтаж и демонтаж без остановки производства.",
       tags: ["Модульность", "Быстрый монтаж"],
     },
     {
       icon: "Tent",
+      img: IMG_COMPRESSOR,
       title: "Защитные купола и арочные системы",
-      desc: "Арочные защитные конструкции для полного укрытия оборудования. Обеспечивают защиту от механических воздействий.",
+      desc: "Арочные защитные конструкции для полного укрытия оборудования. Обеспечивают защиту от механических воздействий, осадков и несанкционированного доступа.",
       tags: ["Купол", "Арка", "Укрытие"],
     },
     {
       icon: "SlidersHorizontal",
+      img: IMG_DATACENTER,
       title: "Периметральные экраны и барьеры",
-      desc: "Сплошные и перфорированные экраны для защиты периметра. Создают физический барьер вокруг критически важных объектов.",
+      desc: "Сплошные и перфорированные экраны для защиты периметра объекта. Создают физический барьер вокруг критически важной инфраструктуры.",
       tags: ["Экран", "Барьер", "Периметр"],
     },
     {
       icon: "Combine",
+      img: IMG_OIL,
       title: "Комбинированные решения",
-      desc: "Индивидуальные проекты, объединяющие несколько типов конструкций. Разрабатываются под конкретные требования объекта.",
+      desc: "Индивидуальные проекты, объединяющие несколько типов конструкций. Разрабатываются под конкретные требования объекта и технического задания заказчика.",
       tags: ["Индивидуально", "Комплекс"],
     },
   ];
@@ -466,23 +603,34 @@ function Solutions() {
           {solutions.map((sol) => (
             <div
               key={sol.title}
-              className="card-hover bg-brand-dark-2 border border-brand-dark-3 rounded-lg p-6 group relative overflow-hidden"
+              className="card-hover bg-brand-dark-2 border border-brand-dark-3 rounded-xl group relative overflow-hidden flex flex-col"
             >
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-blue-light/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="w-12 h-12 rounded-lg bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center mb-5 group-hover:bg-brand-blue/20 transition-colors">
-                <Icon name={sol.icon} fallback="Circle" size={22} className="text-brand-blue-light" />
+              {/* Image */}
+              <div className="relative h-44 overflow-hidden flex-shrink-0">
+                <img
+                  src={sol.img}
+                  alt={sol.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-dark-2" />
+                <div className="absolute top-3 left-3 w-9 h-9 rounded-lg bg-brand-dark/70 backdrop-blur-sm border border-brand-blue/30 flex items-center justify-center">
+                  <Icon name={sol.icon} fallback="Circle" size={18} className="text-brand-blue-light" />
+                </div>
               </div>
-              <h3 className="font-oswald font-600 text-lg text-white mb-3">{sol.title}</h3>
-              <p className="font-montserrat text-sm text-brand-gray leading-relaxed mb-4">{sol.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {sol.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs font-montserrat bg-brand-blue/10 text-brand-blue-light border border-brand-blue/20 px-2.5 py-1 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              {/* Content */}
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="font-oswald font-600 text-lg text-white mb-2">{sol.title}</h3>
+                <p className="font-montserrat text-sm text-brand-gray leading-relaxed mb-4 flex-1">{sol.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {sol.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-montserrat bg-brand-blue/10 text-brand-blue-light border border-brand-blue/20 px-2.5 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -701,31 +849,33 @@ function Process() {
           ))}
         </div>
 
-        {/* Advantages */}
-        <div className="mt-12 bg-brand-dark-2 border border-brand-dark-3 rounded-xl p-6 lg:p-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="font-oswald font-600 text-2xl text-white mb-2">
+        {/* Process visual */}
+        <div className="mt-12 rounded-xl overflow-hidden relative">
+          <img src={IMG_BLUEPRINT} alt="Проектирование" className="w-full h-64 object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/70 to-transparent" />
+          <div className="absolute inset-0 flex items-center px-8 lg:px-12">
+            <div className="max-w-lg">
+              <h3 className="font-oswald font-600 text-2xl lg:text-3xl text-white mb-3">
                 Работаем с проектными и закупочными процедурами
               </h3>
-              <p className="font-montserrat text-sm text-brand-gray">
-                Полное сопровождение на всех этапах — от технического задания до тендерной документации.
+              <p className="font-montserrat text-sm text-brand-gray mb-5">
+                Полное сопровождение от технического задания до тендерной документации.
               </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {[
-                "Рассматриваем технические задания и проекты",
-                "Подготавливаем коммерческие предложения",
-                "Участвуем в тендерных процедурах",
-                "Выполняем расчёт стоимости и сроков",
-                "Предоставляем техническую документацию",
-                "Работаем по 44-ФЗ и 223-ФЗ",
-              ].map((adv) => (
-                <div key={adv} className="flex items-start gap-2">
-                  <Icon name="CheckCircle" size={15} className="text-brand-blue-light mt-0.5 flex-shrink-0" />
-                  <span className="font-montserrat text-sm text-brand-gray-light">{adv}</span>
-                </div>
-              ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {[
+                  "Рассматриваем технические задания и проекты",
+                  "Подготавливаем коммерческие предложения",
+                  "Участвуем в тендерных процедурах по 44-ФЗ и 223-ФЗ",
+                  "Выполняем расчёт стоимости и сроков",
+                  "Предоставляем исполнительную документацию",
+                  "Сопровождаем объект на всех этапах",
+                ].map((adv) => (
+                  <div key={adv} className="flex items-start gap-2">
+                    <Icon name="CheckCircle" size={14} className="text-brand-accent mt-0.5 flex-shrink-0" />
+                    <span className="font-montserrat text-xs text-brand-gray-light">{adv}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -1072,9 +1222,11 @@ export default function Index() {
     <div className="min-h-screen bg-brand-dark">
       <Header />
       <Hero />
+      <About />
       <Services />
       <Objects />
       <Solutions />
+      <Gallery />
       <RegionsMap />
       <Process />
       <Contacts />
