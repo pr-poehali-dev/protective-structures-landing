@@ -133,8 +133,7 @@ function Hero() {
           </div>
 
           <h1 className="font-oswald font-700 text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight mb-6 animate-fade-in-up delay-100">
-            Защитно-<br />
-            <span className="text-brand-blue-light">ограждательные</span><br />
+            Защитно-<span className="text-brand-blue-light">оградительные</span><br />
             конструкции
           </h1>
 
